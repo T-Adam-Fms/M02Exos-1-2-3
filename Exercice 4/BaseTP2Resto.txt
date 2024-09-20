@@ -1,0 +1,77 @@
+// TP 2 [BaseTP2Resto] On se fait un « resto » à la maison ?
+//En effet, votre programme doit simuler la prise d’une commande afin d’obtenir ce résultat 
+
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class BaseTP2Resto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	//1- start with greeting phrase " bonjour, combien de menue souhaitez vous?"
+		System.out.println("bonjour , combien de menues souhaitez vous ?");
+		
+	//2- I should register the client requested menues number
+		Scanner scanner = new Scanner(System.in);
+		int numberOfOrders = scanner.nextInt();
+	//3- according to the menue nr I should have a list of "Commande 1" 
+	//to fill in... untill the nr requested
+	  
+		int i = 0;
+		while(  i < numberOfOrders) {
+	    	i++;
+	    	System.out.println("Commande numéro" + " " + i); 
+	    	
+	    	//4- after getting the commend nr the menue complete should pumb up as following
+			//4AEntry menue
+	    	System.out.println("choix entrée : ");
+	    	String[]
+	    	
+	    	
+	    	//4A _ enter choice nr for entry and register it
+	    	HashMap <Integer, String> entry = new HashMapHashMap <Integer, String>();
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    }
+	    	System.out.println("Total des commandes ont" + " " +i); 
+	    }
+		
+	//4- after getting the commend nr the menue complete should pumb up as following
+		//4A _ enter choice nr for entry and register it
+			// Entry menue
+			// What do you wish for entry "enter the choosen plate nr"
+		//4B _ enter choice nr for main dish and register it
+			// Main_dish menue
+			// What do you wish for main_dish "enter the choosen plate nr"
+		//4C _ enter choice nr for complmentary and register it
+			// Complmentary menue
+			// What do you wish for complmentary "enter the choosen plate nr"
+		//4D _ enter choice nr for drink and register it
+			// Drink menue
+			// What do you wish for drink "enter the choosen drink nr"
+		//4E _ enter choice nr for dessert and register it
+				// Dessert menue
+				// What do you wish for dessert "enter the choosen drink nr" 
+		//5-show the totality for the commande
+		
+		//6-repeat the process for the nxt commande "add totality of comande .. "
+		
+// Coding Plan, As i have a number coressponde to an item and I should occupy it, 
+// I should have a syntax which associate 
+//the nr with the choosen item and be able to register it and call it (key, value )
+//According to my knowledge as beginner i find that H.MAP is very usefull
+	//I should use Wrapper classe 
+	// order to be able to store key vlaue in different trypes(Integer, String)
+
+// Using i counter in while loop help in printing the choice processe only once
+
+}
+
+

@@ -1,0 +1,47 @@
+import java.util.Scanner;  // Fixed: Scanner with an uppercase "S"
+import java.util.Random;   // Fixed: Random with an uppercase "R"
+
+public class TP1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Ask the user if they want to play the game
+        System.out.println("Do you wish to play the GUESS NUMBER game? (YES or NO)");
+        String answer = scanner.nextLine().toLowerCase();  // Fixed: .toLowerCase() instead of .toLowercase()
+
+        // Loop to allow the user to play multiple rounds if they choose "yes"
+        while (answer.equals("yes")) {
+            // Generate a random number between 1 and 100
+            int targetNumber = random.nextInt(100) + 1;
+            int attempts = 0;
+            int guessedNumber = -1;
+
+            System.out.println("Thank you! Please type an integer between 1 and 100:");
+
+            // Loop to continue until the player finds the correct number
+            while (guessedNumber != targetNumber) {
+                guessedNumber = scanner.nextInt();  // Read the user's input
+                attempts++;  // Increment the number of attempts
+
+                if (guessedNumber > targetNumber) {
+                    System.out.println("Try a lower number");
+                } else if (guessedNumber < targetNumber) {
+                    System.out.println("Try a higher number");
+                }
+            }
+
+            // Once the number is found, congratulate the user
+            System.out.println("Congratulations, you found the number in " + attempts + " tries!");
+
+            // Ask the user if they want to play another round
+            System.out.println("Do you want to play another round? (YES or NO)");
+            scanner.nextLine();  // Consume the leftover newline after nextInt()
+            answer = scanner.nextLine().toLowerCase();  // Read the answer and convert to lowercase
+        }
+
+        // Say goodbye
+        System.out.println("GOODBYE!");
+        scanner.close();  // Close the scanner to release resources
+    }
+}
