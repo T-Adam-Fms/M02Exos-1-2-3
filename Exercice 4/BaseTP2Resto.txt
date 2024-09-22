@@ -3,75 +3,156 @@
 
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BaseTP2Resto {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-	//1- start with greeting phrase " bonjour, combien de menue souhaitez vous?"
+	//1- start with a greeting phrase " bonjour, combien de menue souhaitez vous?"
 		System.out.println("bonjour , combien de menues souhaitez vous ?");
 		
-	//2- I should register the client requested menues number
+	//2- I should record the number of menus requested by the customer
 		Scanner scanner = new Scanner(System.in);
 		int numberOfOrders = scanner.nextInt();
-	//3- according to the menue nr I should have a list of "Commande 1" 
-	//to fill in... untill the nr requested
-	  
+		
+	//3- According to the number of menus, I should have a list of "Order 1" 
+		//to fill in... until the requested number
 		int i = 0;
+		int menuKey = 0;
+
 		while(  i < numberOfOrders) {
 	    	i++;
-	    	System.out.println("Commande numéro" + " " + i); 
+	    	System.out.println("Commande numéro:" + " " + i ); 
+	    	//4- After getting the order number, the full menu should pop up as follows
 	    	
-	    	//4- after getting the commend nr the menue complete should pumb up as following
-			//4AEntry menue
+	    //*********************************************************************
+	    	//4A Entry dish
+	    	// What would you like for the starter? "Enter the chosen plate number"
+	    	System.out.println("Que souhaitez vous comme entrée?");
+	    	// creat list to accumulate the items orderd
+	    	List<String> currentOrder = new ArrayList<>();
+	    	// Entry menue
+	    	HashMap <Integer, String> entry = new HashMap <Integer, String>();
+	    	entry.put(1 , " SALADE");
+	    	entry.put(2 , " SOUPE");
+	    	entry.put(3 , " QUICHE");
+	    	entry.put(4 , " AUCUNE");
+	    	System.out.println(entry);
+	    	
+	    	//Entry menue
 	    	System.out.println("choix entrée : ");
-	    	String[]
 	    	
-	    	
-	    	//4A _ enter choice nr for entry and register it
-	    	HashMap <Integer, String> entry = new HashMapHashMap <Integer, String>();
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    }
-	    	System.out.println("Total des commandes ont" + " " +i); 
-	    }
-		
-	//4- after getting the commend nr the menue complete should pumb up as following
-		//4A _ enter choice nr for entry and register it
-			// Entry menue
-			// What do you wish for entry "enter the choosen plate nr"
-		//4B _ enter choice nr for main dish and register it
-			// Main_dish menue
-			// What do you wish for main_dish "enter the choosen plate nr"
-		//4C _ enter choice nr for complmentary and register it
-			// Complmentary menue
-			// What do you wish for complmentary "enter the choosen plate nr"
-		//4D _ enter choice nr for drink and register it
-			// Drink menue
-			// What do you wish for drink "enter the choosen drink nr"
-		//4E _ enter choice nr for dessert and register it
-				// Dessert menue
-				// What do you wish for dessert "enter the choosen drink nr" 
-		//5-show the totality for the commande
-		
-		//6-repeat the process for the nxt commande "add totality of comande .. "
-		
-// Coding Plan, As i have a number coressponde to an item and I should occupy it, 
-// I should have a syntax which associate 
-//the nr with the choosen item and be able to register it and call it (key, value )
-//According to my knowledge as beginner i find that H.MAP is very usefull
-	//I should use Wrapper classe 
-	// order to be able to store key vlaue in different trypes(Integer, String)
-
-// Using i counter in while loop help in printing the choice processe only once
-
+	    	// enter choice nr for the starter and record it
+	    	menuKey = scanner.nextInt();
+	    		if(menuKey > 4){
+	    			System.out.println("entrée un numéro entre 1 et 4");
+	    		}else {
+	    			currentOrder .add(entry.get(menuKey));
+	    		}
+	    	//***********************************************************************
+	    		//4B Main dish
+		    	// What would you like for the main dish "enter the choosen plate nr"
+		    	System.out.println("Que souhaitez vous comme plats?");
+		    	
+		    	// Main dish menue
+		    	HashMap <Integer, String> mainDish = new HashMap <Integer, String>();
+		    	mainDish.put(1 , " POULET");
+		    	mainDish.put(2 , " BOUFE");
+		    	mainDish.put(3 , " POISSON");
+		    	mainDish.put(4 , " VEGETARIEN");
+		    	mainDish.put(5 , " VEGAN");
+		    	mainDish.put(6 , " AUCUNE");
+		    	System.out.println(mainDish);
+		    	
+		    	//Main dish menue
+		    	System.out.println("choix entrée : ");
+		    	
+		    	// enter choice nr for Main dish and recorder it
+		    	menuKey = scanner.nextInt();
+		    		if(menuKey > 6){
+		    			System.out.println("entrée un numéro entre 1 et 6 ");
+		    		}else {
+		    			currentOrder .add(mainDish.get(menuKey));
+		    		}
+		   //********************************************************************* 
+		    		//4C Side dish
+			    	// What would you like for side dish "enter the choosen plate nr"
+			    	System.out.println("Que souhaitez vous comme accompangementes?");
+			    	
+			    	// Side dish menue
+			    	HashMap <Integer, String> complementary = new HashMap <Integer, String>();
+			    	complementary.put(1 , " RIZ");
+			    	complementary.put(2 , " PATE");
+			    	complementary.put(3 , " FRITES");
+			    	complementary.put(4 , " LEGUMES");
+			    	complementary.put(5 , " AUCUNE");
+			    	System.out.println(complementary);
+			    	
+			    	//Side dish menue
+			    	System.out.println("choix entrée : ");
+			    	
+			    	// Enter choice nr for Side dish and record it
+			    	menuKey = scanner.nextInt();
+			    		if(menuKey > 5){
+			    			System.out.println("entrée un numéro entre 1 et 5");
+			    		}else {
+			    			currentOrder .add(complementary.get(menuKey));
+			    		}
+			 //********************************************************************
+			    		//4D Drink
+				    	//  What would you like to drink? "Enter the chosen drink number"
+				    	System.out.println("Que souhaitez vous comme poissons?");
+				    	
+				    	// Drink menue
+				    	HashMap <Integer, String> drink = new HashMap <Integer, String>();
+				    	drink.put(1 , " PEPSI");
+				    	drink.put(2 , " EAU");
+				    	drink.put(3 , " AUCUNE");
+				    	System.out.println(drink);
+				    	
+				    	//Drink menue
+				    	System.out.println("choix entrée : ");
+				    	
+				    	// enter choice nr for drink and record it
+				    	menuKey = scanner.nextInt();
+				    		if(menuKey > 3){
+				    			System.out.println("entrée un numéro entre 1 et 3");
+				    		}else {
+				    			currentOrder .add(drink.get(menuKey));
+				    		}
+				//******************************************************************** 
+				    		//4D Dessert
+					    	//What would you like for dessert? "Enter the chosen dessert number"
+					    	System.out.println("Que souhaitez vous comme dessert?");
+					    	
+					    	// Dessert menue
+					    	HashMap <Integer, String> dessert = new HashMap <Integer, String>();
+					    	dessert.put(1 , " ICE-CREAM");
+					    	dessert.put(2 , " TARTE DE MAISON");
+					    	dessert.put(3 , " AUCUNE");
+					    	System.out.println(dessert);
+					    	
+					    	//Dessert menue
+					    	System.out.println("choix entrée : ");
+					    	
+					    	// Enter choice nr for dessert and record it
+					    	menuKey = scanner.nextInt();
+					    		if(menuKey > 3){
+					    			System.out.println("entrée un numéro entre 1 et 3");
+					    		}else {
+					    			currentOrder .add(dessert.get(menuKey));
+					    		}
+					    		//6-show the resume for the commande
+					    		System.out.println("Résumé de la commande : " + i);
+					    		for (String item : currentOrder) {
+					    			System.out.print(item+ " ");
+					    		}System.out.print("\n"
+					    				+ " ");
+				//***********************************************************************
+					    		//5- The process for the next order will be repeated 
+					//6- Show the total number of orders	
+					    }
+						System.out.println("Total des commandes ont" + " " +i); 
+					    }
 }
-
-
+		
